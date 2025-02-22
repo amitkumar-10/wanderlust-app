@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate")%>
+<div class="row">
+    <div class="col-8 offset-2">
+        
+        <h3>Create a New Listing</h3><!--here "enctype" is use to upload image-->
+        <form method="POST" action="/listings"  class="needs-validation" novalidate enctype="multipart/form-data"><!--here nonvalidate is stands for formValidation in our form and we use bootstrap class -->
+            <div class="mb-3">
+              <lable for="title" class="form-lable"></lable>
+              <input name="listing[title]" 
+              placeholder="Add a catchy title" 
+              type="text" class="form-control" 
+              required
+            />
+              <div class="valid-feedback">Title Looks good!</div>
+            </div>
+        
+            <div class="mb-3">
+              <lable for="descripition" class="form-lable">Descripition</lable>
+              <textarea name="listing[descripition]" 
+              type="text" 
+              class="form-control" 
+              required>
+              </textarea>
+              <div class="invalid-feedback">Please enter short descripition</div>
+            </div>
+
+            <!-- <div class="mb-3">
+              <lable for="image" class="form-lable">Image Link</lable>
+              <input name="listing[image]" placeholder="enter image URL/Link" class="form-control">
+            </div> -->
+
+            <div class="mb-3">
+              <lable for="image" class="form-lable">Upload Image for Listing</lable>
+              <input name="listing[image]" 
+              type="file" 
+              placeholder="upload Image" 
+              class="form-control"
+              required>
+              
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Category of Listing:</label>
+              <select
+                class="form-select"
+                name="listing[category]"
+                id="category"
+                required
+              >
+                <option value="" disabled selected>Select Category</option>
+                <option value="Rooms">Rooms</option>
+                <option value="Iconic Cities">Iconic Cities</option>
+                <option value="Mountains">Mountains</option>
+                <option value="Castles">Castles</option>
+                <option value="Amazing Pools">Amazing Pools</option>
+                <option value="Camping">Camping</option>
+                <option value="Farms">Farms</option>
+                <option value="Arctic">Arctic</option>
+                <option value="Domes">Domes</option>
+              </select>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <lable for="price" class="form-lable">Price</lable>
+                    <input name="listing[price]" 
+                    placeholder="1,999" 
+                    type="number" 
+                    class="form-control" 
+                    required>
+
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Price should be valid price</div>
+                  </div>
+
+                <div class="mb-3 col-md-8">
+                   <lable for="country" class="form-lable">Country</lable>
+                   <input name="listing[country]"
+                    placeholder="India" 
+                    type="text" 
+                    class="form-control" required>
+                   
+                    <div class="invalid-feedback">Country name should be valid</div>
+                  </div>
+            </div>
+        
+            <div class="mb-3">
+              <lable for="location" class="form-lable">Location</lable>
+              <input name="listing[location]" 
+              placeholder="Jaipur, Rajasthan" 
+              type="text" 
+              class="form-control" required>
+              <div class="invalid-feedback">Location should be valid</div>
+            </div>
+                   
+        
+            <button class="btn btn-dark add-btn">Add</button>
+            <br><br>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"></a>
+      <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarNavAltMarkup" 
+          
+        >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="Wanderlust" href="/listings"><i class="fa-brands fa-wikipedia-w"></i>anderlust</a>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+
+          <form action="/listings/findListings" method="post"class="d-flex"role="search">
+            <input 
+              class="form-control mr-2 search-inp" 
+              type="search"
+              name="list[location]"
+              placeholder="Search by Location"
+            />
+
+            <button class="btn search-btn " 
+              type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>Search
+            </button>
+
+          </form>
+        </div>
+
+        <!--Login logout button in navbar-->
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Airbnb your Home</a>
+          <% if(!currUser) {%>
+          <a class="nav-link"  href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+          <% } %>
+          <% if(currUser){ %>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .search-btn{
+      background-color: #000000;
+      color:#ffffff;
+      border-radius:25px;
+      padding: 0 1rem 0 1rem;
+      border:none;
+    }
+
+    .search-btn:hover{
+      background-color: #efeaea;
+      color:#000000;
+      
+    }
+    .search-btn i{
+      display:inline;
+      margin-right: 0.5rem;
+    }
+    .search-inp{
+      border-radius: 25px;
+      padding: 0.5rem 3rem 0.5rem 3rem;
+      font-size:0.8;
+    }
+
+  </style>
